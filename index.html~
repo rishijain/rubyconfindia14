@@ -55,11 +55,11 @@
 
 <section>
 <h1 id='fragments'>Statistics:</h1>
-<h3 class='fragment'> 0.70 Gem/Rubyist</h3>
+<h3 class='fragment'> 0.57 Gem/Rubyist</h3>
 </section>
 
 <section>
-<img width="100%" height="100%" style='margin-top:-10px;' src='/home/rishi/work/talks/RubyConfIndia-14/WHY.jpg' alt="Meny">
+<img width="100%" height="100%" style='margin-top:-10px;' src='./images/WHY.jpg' alt="Meny">
 <p><small class='very-small'>Downloaded from: &nbsp; http://www.ideachampions.com/weblogs/WHY.jpg</small></p>
 </section>
 
@@ -73,36 +73,36 @@
 
 <section>
 <h1>1. Complicated</h1>
-<img width="600" height="500" src='/home/rishi/work/talks/RubyConfIndia-14/complicated.jpg' alt="Meny">
+<img width="600" height="500" src='./images/complicated.jpg' alt="Meny">
 <small style='color:black;' class='very-small'>(Downloaded from: http://static4.cad-notes.com/wp-content/uploads/2013/02/complicated-drawing.jpg)</small>
 </section>
 
 <section style='width:850px;'>
 <h1>2. Calibre</h1>
-<img width="600" height="500" src='/home/rishi/work/talks/RubyConfIndia-14/ability.jpg' alt="Meny">
+<img width="600" height="500" src='./images/ability.jpg' alt="Meny">
 <small style='color:black;' class='very-small'>(Downloaded from: http://www.sharpbrains.com/wp-content/uploads/2006/12/BrainLightBulb.jpg)</small>
 </section>
 
 <section  style='width:850px;'>
 <h1>3. Busy</h1>
-<img width="600" height="500" src='/home/rishi/work/talks/RubyConfIndia-14/busy.png' alt="Meny">
+<img width="600" height="500" src='./images/busy.png' alt="Meny">
 <small style='color:black;' class='very-small'>(Downloaded from: http://dreallday.com/wp-content/uploads/2012/07/475px-Busy_desk.svg_.png)</small>
 </section>
 
 <section style='width:850px;'>
 <h1>4. Lazy</h1>
-<img width="600" height="500" src='/home/rishi/work/talks/RubyConfIndia-14/lazy.jpg' alt="Meny">
+<img width="600" height="500" src='./images/lazy.jpg' alt="Meny">
 <small style='color:black;' class='very-small'>(Downloaded from: http://images.smh.com.au/2011/05/06/2346892/729lazy-420x0.jpg)</small>
 </section>
 
 <section style='width:850px;'>
 <h1>5. Trivial</h1>
-<img width="600" height="500" src='/home/rishi/work/talks/RubyConfIndia-14/yoda.jpg' alt="Meny">
-<small style='color:black;' class='very-small'>(Downloaded from: http://art.ngfiles.com/images/1/blackmarketkraig_useless-boy-v2-0.jpg)</small>
+<img width="600" height="500" src='./images/yoda.jpg' alt="Meny">
+<small style='color:black;' class='very-small'>(Downloaded from: http://art.ngfiles.com./images/1/blackmarketkraig_useless-boy-v2-0.jpg)</small>
 </section>
 
 <section>
-<img width="1500" height="500" src='/home/rishi/work/talks/RubyConfIndia-14/adorable_cat_2.png' alt="Meny">
+<img width="1500" height="500" src='./images/adorable_cat_2.png' alt="Meny">
 </section>
 
 </section>
@@ -368,7 +368,7 @@ gem install gemname-version.gem -P HighSecurity
 
 <section>
 <p>@benjamin_smith</p>
-<img  src='/home/rishi/work/talks/RubyConfIndia-14/ben.jpeg' alt="Meny">
+<img  src='./images/ben.jpeg' alt="Meny">
 </section>
 
 <section>
@@ -417,26 +417,26 @@ gem unpack gemname-0.0.1.gem</code>
 </section>
 
 <section>
-<img width="1000" height="500" src='/home/rishi/work/talks/RubyConfIndia-14/nExt.png' alt="Meny">
+<img width="1000" height="500" src='./images/nExt.png' alt="Meny">
 </section>
 
 
 <section>
 <h1 class='whiteText'>Behind the scene:</h1>
 <h3 class='whiteText'>Step 1</h3>
-<img width="1000" height="500" src='/home/rishi/work/talks/RubyConfIndia-14/process1.png' alt="Meny">
+<img width="1000" height="500" src='./images/process1.png' alt="Meny">
 </section>
 
 <section>
 <h1 class='whiteText'>Behind the scene:</h1>
 <h3 class='whiteText'>Step 2</h3>
-<img width="1000" height="500" src='/home/rishi/work/talks/RubyConfIndia-14/process2.png' alt="Meny">
+<img width="1000" height="500" src='./images/process2.png' alt="Meny">
 </section>
 
 <section>
 <h1 class='whiteText'>Behind the scene:</h1>
 <h3 class='whiteText'>Step 3</h3>
-<img width="1000" height="500" src='/home/rishi/work/talks/RubyConfIndia-14/process3.png' alt="Meny">
+<img width="1000" height="500" src='./images/process3.png' alt="Meny">
 </section>
 
 <section>
