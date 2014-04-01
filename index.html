@@ -1,0 +1,714 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>RubyConf India, 2014.</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Build, Debug and Prosper</h1>
+					<h3>(in an around 25 minutes ..!!)</h3>
+					
+				</section>
+
+
+<section>
+<p><small>Build</small> something, <small>Debug</small> Something, <small>Prosper</small> Something .. Something?</p>
+</section>
+
+<section>
+<h1 id='fragments'>GEMS</h1>
+</section>
+
+<section>
+
+<section>
+<h1 id='fragments'>Statistics:</h1>
+<h3 class='fragment'> 0.57 Gem/Rubyist</h3>
+</section>
+
+<section>
+<img width="100%" height="100%" style='margin-top:-10px;' src='/home/rishi/work/talks/RubyConfIndia-14/WHY.jpg' alt="Meny">
+<p><small class='very-small'>Downloaded from: &nbsp; http://www.ideachampions.com/weblogs/WHY.jpg</small></p>
+</section>
+
+</section>
+
+<section>
+
+<section>
+<h1>Possible Reasons:</h1>
+</section>
+
+<section>
+<h1>1. Complicated</h1>
+<img width="600" height="500" src='/home/rishi/work/talks/RubyConfIndia-14/complicated.jpg' alt="Meny">
+<small style='color:black;' class='very-small'>(Downloaded from: http://static4.cad-notes.com/wp-content/uploads/2013/02/complicated-drawing.jpg)</small>
+</section>
+
+<section style='width:850px;'>
+<h1>2. Calibre</h1>
+<img width="600" height="500" src='/home/rishi/work/talks/RubyConfIndia-14/ability.jpg' alt="Meny">
+<small style='color:black;' class='very-small'>(Downloaded from: http://www.sharpbrains.com/wp-content/uploads/2006/12/BrainLightBulb.jpg)</small>
+</section>
+
+<section  style='width:850px;'>
+<h1>3. Busy</h1>
+<img width="600" height="500" src='/home/rishi/work/talks/RubyConfIndia-14/busy.png' alt="Meny">
+<small style='color:black;' class='very-small'>(Downloaded from: http://dreallday.com/wp-content/uploads/2012/07/475px-Busy_desk.svg_.png)</small>
+</section>
+
+<section style='width:850px;'>
+<h1>4. Lazy</h1>
+<img width="600" height="500" src='/home/rishi/work/talks/RubyConfIndia-14/lazy.jpg' alt="Meny">
+<small style='color:black;' class='very-small'>(Downloaded from: http://images.smh.com.au/2011/05/06/2346892/729lazy-420x0.jpg)</small>
+</section>
+
+<section style='width:850px;'>
+<h1>5. Trivial</h1>
+<img width="600" height="500" src='/home/rishi/work/talks/RubyConfIndia-14/yoda.jpg' alt="Meny">
+<small style='color:black;' class='very-small'>(Downloaded from: http://art.ngfiles.com/images/1/blackmarketkraig_useless-boy-v2-0.jpg)</small>
+</section>
+
+<section>
+<img width="1500" height="500" src='/home/rishi/work/talks/RubyConfIndia-14/adorable_cat_2.png' alt="Meny">
+</section>
+
+</section>
+
+<section>
+<h1>Agenda:</h1>
+<h3>Build a ruby gem</h3>
+<h3>Security issues</h3>
+<h3>Write native extension<small>(if time permits)</small></h3>
+</section>
+
+<section>
+
+<section>
+<h1>Building a ruby gem</h1>
+</section>
+
+<section>
+<h3 id='fragments' style='margin-top:-225px;'>Let's build.</h3>
+<p class='fragment'>Wait.. but what?</p>
+</section>
+
+
+<section>
+<h3 style='margin-top:-225px;'>Steps:</h3>
+<p>Name</p>
+<p>Code</p>
+<p>Release</p>
+</section>
+
+<section>
+<h3 id='fragments'>naming conventions</h3>
+<p class='fragment'>Underscores for multiple words</p>
+<p class='fragment'>Dash when extending</p>
+<pre class='fragment' style='width:1000px;margin-top:100px;padding-left:150px;'>
+  ------------------    -------------------------     ------------------------
+  |      gem name  |    |   Module/Class name   |    |   Require statement   |
+  ------------------    -------------------------     ------------------------
+           |                        |                             |
+ -----------------------   ------------------        ---------------------------
+ |    hello_world      |   |  HelloWorld    |        |  require 'hello_world'  | 
+ -----------------------   ------------------        ---------------------------
+          |                        |                             |
+ -----------------------   -------------------       -----------------------------
+ | rails-hello_world   |   |Rails::HelloWorld|       |require 'rails/hello_world'|  
+ -----------------------   -------------------       -----------------------------
+ </pre>
+</section>
+
+<section>
+<h3 id='fragments'>Gemname availability</h3>
+<p class='fragment'>rubygems.org</p>
+<p class='fragment'>Command Line</p>
+</section>
+
+<section>
+<pre style='width:800px;padding-left:230px;font-size:35px;'>gem query --remote rails</pre>
+<pre style='width:900px;padding-left:60px;font-size:35px;'>gem query --remote --name-matches '^rails$'</pre>
+</section>
+
+<section>
+<h3>code</h3>
+</section>
+
+
+<section>
+<h3>VERSIONING</h3>
+</section>
+
+<section>
+<h3 id='fragments' style='margin-top:-225px;'>Scenario:</h3>
+<p class='fragment'> VERSION 1:<span>&nbsp;Initial class is released</span> </p>
+<p class='fragment'> VERSION 2:<span>&nbsp;More features added to class</span></p>
+<p class='fragment'> VERSION 3:<span>&nbsp;Bug fixes in existing methods</span></p>
+<p class='fragment'> VERSION 4:<span>&nbsp;Changes which break earlier code</span></p>
+</section>
+
+<section>
+<h3 style='margin-top:-225px;'>Semantic Versioning:</h3>
+<p>x.y.z</p>
+<p>Patch: 0.0.x</p>
+<p>Minor: 0.x.0</p>
+<p>Major: x.0.0</p>
+</section>
+
+<section>
+<h3 class='fragments' style='margin-top:-225px;'>Semantic Versioning:</h3>
+<p class='fragment'> VERSION 0.0.1 :<span>&nbsp;Initial class is released</span> </p>
+<p class='fragment'> VERSION 0.1.0 :<span>&nbsp;More features added to class</span></p>
+<p class='fragment'> VERSION 0.1.1 :<span>&nbsp;Bug fixes in existing methods</span></p>
+<p class='fragment'> VERSION 1.0.0 :<span>&nbsp;Changes which break earlier code</span></p>
+</section>
+
+<section>
+<h1 style='margin-top:-150px;'><pre style='width:150px;padding-left:63px;'>~></pre></h1>
+</section>
+
+<section>
+<pre style='color:black;width:700px;font-size:45px;padding-left:250px;'>
+gem 'rails', '~&gt; 3.0.3'
+gem 'thin',  '~&gt; 1.1'
+</pre>
+</section>
+
+
+<section>
+<h3 style='margin-top:-225px;'>Semantic Versioning:</h3>
+<p>1. Optimistic Way</p>
+<p>1. Pessimistic Way</p>
+</section>
+
+<section>
+<h3 style='margin-top:-225px;'>Optimistic Versioning</h3>
+<p>gem 'your_gem_name', '>= 0.1.0'</p>
+</section>
+
+<section>
+<h3 style='margin-top:-225px;'>Pessimistic Versioning</h3>
+<p>gem 'your_gem_name', '>= 0.1.0', '< 1.0'</p>
+</section>
+
+
+<section>
+<h3 id='fragments'>Releasing gem</h3>
+<pre class='fragment' style='font-size:33px;text-align:center;'>gem push gemname-0.0.1.gem</pre>
+</section>
+
+
+</section>
+
+
+<section data-transition="linear" data-background="#8c4738" data-background-transition="slide">
+
+<section>
+<h3>30 JAN</h3>
+</section>
+
+<section>
+<h3>30 JAN, 2013</h3>
+</section>
+
+<section>
+<h3>Rubygems got hacked !!!</h3>
+</section>
+
+
+<section>
+<h3>After effects:</h3>
+<p>1.) Signing ruby gems.</p>
+<p>2.) App-store type model.</p>
+<p>3.) Ask developers to pay for certificates.</p>
+</section>
+
+<section>
+<h3>Signing gems</h3>
+</section>
+
+
+<section>
+<p>Build a public certificate and a private pem files.</p>
+</section>
+
+<section>
+<h3>How to sign gems?</h3>
+</section>
+
+<section>
+<h3  id='fragments' style='margin-top:-145px;'>Step 1: Create certificates</h3>
+<pre style='margin-top:80px;text-align:center;font-size:37px;'>
+$ gem cert --build you@example.com
+</pre>
+<p class='fragment' style='margin-top:150px;'>Public Cert: gem-public_cert.pem</p>
+<p class='fragment'>Private Key: gem-private_key.pem</p>
+</section>
+
+<section>
+<h3  id='fragments' style='margin-top:-145px;'>Step 2: Update gemspec files</h3>
+<pre style='text-align:left;font-size:28px;'>
+cd /path/to/your/gem
+mkdir certs
+cp ~/.ssh/gem-public_cert.pem certs/yourhandle.pem
+git add certs/yourhandle.pem
+</pre>
+<pre class='fragment'  style='text-align:left;font-size:28px;margin-top:60px;'>
+s.cert_chain  = ['certs/yourhandle.pem']
+s.signing_key = File.expand_path("~/.ssh/gem-private_key.pem")
+</pre>
+</section>
+
+<section>
+<h3  id='fragments' style='margin-top:-225px;'>Step 3: Certificate List</h3>
+<pre class='fragment'  style='text-align:center;font-size:33px;margin-top:70px;'>
+gem cert --add certs/yourhandle.pem
+</pre>
+</section>
+
+<section>
+<h3  id='fragments' style='margin-top:-225px;'>Step 4: Build Gem</h3>
+<pre class='fragment' style='text-align:center;font-size:33px;margin-top:70px;'>
+gem build gemname.gemspec
+</pre>
+
+<pre class='fragment' style='text-align:center;font-size:30px;margin-top:70px;'>
+gem install gemname-version.gem -P HighSecurity
+</pre>
+</section>
+
+<section>
+<p style='font-size:50px;'>gem &nbsp; install &nbsp; gemname &nbsp; -P &nbsp; HighSecurity</p>
+</section>
+
+<section style='text-align:left;'>
+<h3  id='fragments' style='margin-top:-225px;'>Security Policies</h3>
+<p class='fragment' style='margin-top:40px;'>1.) No Security: <span class='fragment'>Well, no security at all. Signed packages are treated like unsigned packages.</span></p>
+<p class='fragment' style='margin-top:40px;'>2.) Low Security:<span class='fragment'>Expiry of certificate</span></p>
+<p class='fragment' style='margin-top:40px;'>3.) Medium Security: <span class='fragment'>Validation of certificate + Certificate chains</span></p>
+<p class='fragment' style='margin-top:40px;'>4.) High Security: <span class='fragment'>Medium Security + un-signed gems restriction</span></p>
+</section>
+
+<section>
+<h3 id=''fragments>Problem with signing ruby gems?</h3>
+<p class='fragment'>Not scalable as number of gems to install increase.</p>
+</section>
+
+<section>
+<h3 id='fragment'>Chain of Certificates</h3>
+<pre>
+                    --------------------------
+                    | rubygems@rubygems.org |
+                    --------------------------
+                                |
+              -----------------------------------
+              |                                 |
+  ----------------------------    -----------------------------
+  |         Varis            |    |         Joffrey            |
+  ----------------------------    -----------------------------
+       |                |                 |             |
+---------------   ----------------   -----------   --------------
+|  Ned Stark  |   |     Tyron    |   | Khaleesi |  |     Rob    |
+---------------   ----------------   -----------   --------------
+</pre>
+</section>
+
+<section>
+<h3>How signing helps?</h3>
+</section>
+
+<section>
+<h3 id='fragments'>Lets consider a hypothetical scenario:</h3>
+<p class='fragment'>1. You have a problem.</p>
+<p class='fragment'>2. Solution found on stack-overflow (some gem )</p>
+<p class='fragment'>3. gem install gem_name</p>
+</section>
+
+<section>
+<h3 id='fragments'>vulnerability on gem installation</h3>
+<p class='fragment'>1. Read/Write files.</p>
+<p class='fragment'>2. Connect to remote server.</p>
+<p class='fragment'>3. Grab passwords</p>
+<p class='fragment'>4. Own all your rubygems</p>
+<p class='fragment' style='margin-top:250px;'>and a lot more is possible.</p>
+</section>
+
+<section>
+<p>@benjamin_smith</p>
+<img  src='/home/rishi/work/talks/RubyConfIndia-14/ben.jpeg' alt="Meny">
+</section>
+
+<section>
+<h3 id='fragments'>Dont install Ben's gems.</h3>
+<p>1.) awesome_rails_flash_messages</p>
+<p>2.) better_date_to_s</p>
+<p>3.) be_truthy</p>
+</section>
+
+<section>
+<pre>
+<code style='text-align:center;font-size:50px;height:100px;'>
+gem fetch gemname
+</code>
+<code style='text-align:center;font-size:50px;height:100px;'>
+gem unpack gemname-0.0.1.gem</code>
+</pre>
+</section>
+
+<section>
+<p style='font-size:50px;'>Take Away: Dont trust gems blindly !!</p>
+</section>
+
+
+</section>
+<section class='blackEnv' data-background="black">
+
+<section>
+</section>
+
+<section>
+<h1 class='whiteText'>Native Extensions</h1>
+</section>
+
+<section>
+<h1 class='whiteText'>Building native extensions. This could take a while ...</h1>
+</section>
+
+<section>
+<h1 class='whiteText'>ERROR: Failed to build gem native extension.</h1>
+</section>
+
+
+<section>
+<h1 class='whiteText'>What?</h1>
+</section>
+
+<section>
+<img width="1000" height="500" src='/home/rishi/work/talks/RubyConfIndia-14/nExt.png' alt="Meny">
+</section>
+
+
+<section>
+<h1 class='whiteText'>Behind the scene:</h1>
+<h3 class='whiteText'>Step 1</h3>
+<img width="1000" height="500" src='/home/rishi/work/talks/RubyConfIndia-14/process1.png' alt="Meny">
+</section>
+
+<section>
+<h1 class='whiteText'>Behind the scene:</h1>
+<h3 class='whiteText'>Step 2</h3>
+<img width="1000" height="500" src='/home/rishi/work/talks/RubyConfIndia-14/process2.png' alt="Meny">
+</section>
+
+<section>
+<h1 class='whiteText'>Behind the scene:</h1>
+<h3 class='whiteText'>Step 3</h3>
+<img width="1000" height="500" src='/home/rishi/work/talks/RubyConfIndia-14/process3.png' alt="Meny">
+</section>
+
+<section>
+<h1 class='whiteText'>How?</h1>
+</section>
+
+<section>
+<h1 class='whiteText'>Let's look at some C code.</h1>
+</section>
+
+<section>
+<h1>C code</h1>
+<pre>
+#include&nbsp;"ruby.h"
+
+static&nbsp;VALUE&nbsp;t_init(VALUE&nbsp;self)
+{
+&nbsp;&nbsp;VALUE&nbsp;arr;
+
+&nbsp;&nbsp;arr&nbsp;=&nbsp;rb_ary_new();
+&nbsp;&nbsp;rb_iv_set(self,&nbsp;"@arr",&nbsp;arr);
+&nbsp;&nbsp;return&nbsp;self;
+}
+
+static&nbsp;VALUE&nbsp;t_add(VALUE&nbsp;self,&nbsp;VALUE&nbsp;anObject)
+{
+&nbsp;&nbsp;VALUE&nbsp;arr;
+
+&nbsp;&nbsp;arr&nbsp;=&nbsp;rb_iv_get(self,&nbsp;"@arr");
+&nbsp;&nbsp;rb_ary_push(arr,&nbsp;anObject);
+&nbsp;&nbsp;return&nbsp;arr;
+}
+
+VALUE&nbsp;cTest;
+
+void&nbsp;Init_Test()&nbsp;{
+&nbsp;&nbsp;cTest&nbsp;=&nbsp;rb_define_class("Test",&nbsp;rb_cObject);
+&nbsp;&nbsp;rb_define_method(cTest,&nbsp;"initialize",&nbsp;t_init,&nbsp;0);
+&nbsp;&nbsp;rb_define_method(cTest,&nbsp;"add",&nbsp;t_add,&nbsp;1);
+}
+
+</pre>
+</section>
+
+<section>
+<h1>Basics:</h1>
+<p>C variable and C data</p>
+<p>Ruby variable and Ruby data</p>
+</section>
+
+<section>
+<h1>Basics:</h1>
+<p>C variables have type, Ruby variable does not have a type.</p>
+<p>C data do not have type, Ruby data does have a type.</p>
+</section>
+
+<section>
+<h1style='margin-top:-255px;'>Code Break-up</h1>
+<p style='margin-top:220px;'> #include "ruby.h"</p>
+</section>
+
+<section>
+<h1 style='margin-top:-255px;'>Code Break-up</h1>
+<p style='margin-top:220px;'> VALUE &nbsp; cTest;</p>
+</section>
+
+<section>
+<h1 style='margin-top:-225px;'>Code Break-up</h1>
+<p style='margin-top:200px;'> rb_define_class </p>
+<p> rb_define_method </p>
+</section>
+
+<section>
+<h1 style='margin-top:-185px;'>Code Break-up</h1>
+<pre style='margin-top:185px;'>
+void&nbsp;Init_Test()&nbsp;{
+&nbsp;&nbsp;cTest&nbsp;=&nbsp;rb_define_class("Test",&nbsp;rb_cObject);
+&nbsp;&nbsp;rb_define_method(cTest,&nbsp;"initialize",&nbsp;t_init,&nbsp;0);
+&nbsp;&nbsp;rb_define_method(cTest,&nbsp;"add",&nbsp;t_add,&nbsp;1);
+}
+</pre>
+</section>
+
+<section>
+<h1 style='margin-top:-225px;'>Code Break-up</h1>
+<p style='margin-top:200px;'> rb_iv_set </p>
+<p> rb_iv_get </p>
+</section>
+
+<section>
+<h1 style='margin-top:-185px;'>Code Break-up</h1>
+<pre style='margin-top:185px;'>
+
+static&nbsp;VALUE&nbsp;t_init(VALUE&nbsp;self)
+{
+&nbsp;&nbsp;VALUE&nbsp;arr;
+&nbsp;&nbsp;arr&nbsp;=&nbsp;rb_ary_new();
+&nbsp;&nbsp;rb_iv_set(self,&nbsp;"@arr",&nbsp;arr);
+&nbsp;&nbsp;return&nbsp;self;
+}
+
+</pre>
+</section>
+
+
+<section>
+<h1 style='margin-top:-185px;'>Code Break-up</h1>
+<pre style='margin-top:185px;'>
+
+static&nbsp;VALUE&nbsp;t_add(VALUE&nbsp;self,&nbsp;VALUE&nbsp;anObject)
+{
+&nbsp;&nbsp;VALUE&nbsp;arr;
+
+&nbsp;&nbsp;arr&nbsp;=&nbsp;rb_iv_get(self,&nbsp;"@arr");
+&nbsp;&nbsp;rb_ary_push(arr,&nbsp;anObject);
+&nbsp;&nbsp;return&nbsp;arr;
+}
+
+</pre>
+</section>
+
+<section>
+<h1 style='margin-top:-185px;'>Equivalent Ruby Code</h1>
+<pre style='margin-top:185px;'>
+class&nbsp;Test
+&nbsp;&nbsp;def&nbsp;initialize
+&nbsp;&nbsp;&nbsp;&nbsp;@arr&nbsp;=&nbsp;Array.new
+&nbsp;&nbsp;end
+&nbsp;&nbsp;def&nbsp;add(anObject)
+&nbsp;&nbsp;&nbsp;&nbsp;@arr.push(anObject)
+&nbsp;&nbsp;end
+end
+
+</pre>
+</section>
+<section>
+<h1>Why?</h1>
+</section>
+
+<section>
+<h1>Speed</h3>
+</section>
+
+<section>
+<h1>Re-use of existing library</h3>
+</section>
+
+
+<section>
+<h1>Is it enough?</h3>
+</section>
+
+<section>
+<h3>1. Use package manager</h3>
+<pre>
+$ gem install mysql2
+Building native extensions.  This could take a while...
+ERROR:  Error installing mysql2:
+    ERROR: Failed to build gem native extension.
+
+        /Users/rishi/.rvm/rubies/ruby-1.9.3-p352/bin/ruby extconf.rb
+checking for rb_thread_blocking_region()... no
+checking for mysql_query() in -lmysqlclient... no
+checking for main() in -lm... yes
+checking for mysql_query() in -lmysqlclient... no
+
+
+etc...
+
+*** extconf.rb failed ***
+Could not create Makefile due to some reason, probably lack of
+necessary libraries and/or headers.  Check the mkmf.log file for more
+details.  You may need configuration options.
+
+Provided configuration options:
+    --with-opt-dir
+    --without-opt-dir
+    --with-opt-include
+    --without-opt-include=${opt-dir}/include
+    --with-opt-lib
+    --without-opt-lib=${opt-dir}/lib
+
+</pre>
+</section>
+
+<section>
+<h3>2. Incorrect configuration flag</h3>
+<pre>
+$ gem install rsruby
+Building native extensions.  This could take a while...
+ERROR:  Error installing rsruby:
+    ERROR: Failed to build gem native extension.
+
+        /Users/rishi/.rvm/rubies/ruby-1.9.3-p352/bin/ruby extconf.rb
+checking for main() in -lR... no
+
+ERROR: Cannot find the R library, aborting.
+
+...etc...
+
+</pre>
+</section>
+
+<section>
+<h3>2. Incorrect configuration flag</h3>
+<pre>
+You may need configuration options.
+
+Provided configuration options:
+    --with-opt-dir
+
+...etc...
+
+    --with-R-dir
+    --without-R-dir
+    --with-R-include
+
+...etc...
+
+</pre>
+
+<pre>
+gem install rsruby -- --with-R-dir=/usr/local/Cellar/r/2.13.2/R.framework/Resources
+</pre>
+</section>
+
+<section>
+<h3>3. Set Environment variables</h3>
+</section>
+
+</section>
+
+<section style='color:black;'>
+Thank You.
+</section>
+
+
+			
+				
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
